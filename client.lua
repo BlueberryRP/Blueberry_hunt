@@ -33,17 +33,21 @@ function missionstart()
 							if x == 0 then
 							TriggerServerEvent('bberry_hunt:AddSomeMoney')
 							Citizen.InvokeNative(0x4AD96EF928BD4F9A, hash)
-							pressing = false
-							starting = false
-							already = false
-							count = nil
-							createdped = nil
+							stopmission()
 						end
 					end
 				end
 			end
 		end
 	end)
+end
+
+function stopmission()
+	pressing = false
+	starting = false
+	already = false
+	count = nil
+	createdped = nil
 end
 
 function DrawTxt(str, x, y, w, h, enableShadow, col1, col2, col3, a, centre)
@@ -90,21 +94,6 @@ function startscenario()
 	DisplayHud(true)
 	DisplayRadar(true)
 end
-
-
-
-AddEventHandler('onResourceStop', function(resource)
-	if resource == GetCurrentResourceName() then
-		pressing = false
-		starting = false
-		already = false
-		count = nil
-		createdped = nil
-		
-	end
-end)
-
-
 
 Citizen.CreateThread(function()
     while true do
