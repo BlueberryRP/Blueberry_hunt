@@ -46,8 +46,6 @@ function stopmission()
 	pressing = false
 	starting = false
 	already = false
-	count = nil
-	createdped = nil
 end
 
 function DrawTxt(str, x, y, w, h, enableShadow, col1, col2, col3, a, centre)
@@ -108,12 +106,14 @@ Citizen.CreateThread(function()
 				GiveWeaponToPed_2(playerPed, 0x772C8DD6, 10, true, true, 1, false, 0.5, 1.0, 1.0, true, 0, 0)
 				SetPedAmmo(playerPed, 0x772C8DD6, 10)
 				missionstart()
-				startscenario()
 				already = true
+				startscenario()
 			end
 		end
 	end
 end)
+
+
 
 Citizen.CreateThread(function()
 	Wait(0)

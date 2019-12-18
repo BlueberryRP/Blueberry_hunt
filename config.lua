@@ -1,6 +1,6 @@
 Config = {}
 
-Config.HuntingMessage = 'Press DEL for hunting'
-Config.KillingMessage = 'Kill foxes that marked on the map'
+Config.HuntingMessage = 'Нажмите DEL для начала охоты'
+Config.KillingMessage = 'Охотьтесь на лис обозначеных на карте'
 Config.Price = 5
 Config.Xp = 10
